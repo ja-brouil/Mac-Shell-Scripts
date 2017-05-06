@@ -41,3 +41,4 @@ killall Finder
 
 echo -e "\nScript done."
 exit
+
