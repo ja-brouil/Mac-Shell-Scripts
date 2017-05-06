@@ -12,9 +12,18 @@ CHECK1=$(/usr/bin/sfltool dump-storage ~/Library/Application\ Support/com.apple.
 clear
 
 #Delete Old Favorites
-echo "Removing old server favorite files."
-sfltool clear
-killall Finder
+echo "This will add the current NAME OF COMPANY server IP Address to your favorites when you hit CMD + K"
+
+#Delete Old Favorites
+echo "Do you want to clear your current favorite servers? Type Y or N"
+echo "Warning! This will remove your sidebar favorites as well!"
+read YN
+if [ $YN = "Y" ] || [ $YN = "y" ] || [ $YN = "yes" ]
+then
+	echo "Removing old server favorite files."
+	sfltool clear
+	killall Finder
+fi
 
 echo "Adding SERVERNAME"
 /usr/bin/sfltool add-item -n "Servername" com.apple.LSSharedFileList.FavoriteServers "URL://SERVERNAME"
@@ -24,6 +33,8 @@ echo -e "\nAdding Old Server"
 
 echo -e "\nAdding Old Server SMB"
 /usr/bin/sfltool add-item -n "Old Server SMB" com.apple.LSSharedFileList.FavoriteServers "URL://SERVERNAME"
+
+echo -e " "
 
 killall cfpresfsd
 killall Finder
