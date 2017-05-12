@@ -2,7 +2,7 @@
 # File Batch transfer
 # This script automatically moves over files in batches to new folders with a naming convention
 # Written by: James Brouillet
-# Last edi: May 11, 2017
+# Last edit: May 11, 2017
 
 # Clear terminal
 clear
